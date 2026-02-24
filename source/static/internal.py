@@ -10,9 +10,9 @@ PROJECT_NAME = f"KS-Downloader V{VERSION_MAJOR}.{VERSION_MINOR} {
     'Beta' if VERSION_BETA else 'Stable'
 }"
 
-REPOSITORY = "https://github.com/JoeanAmier/KS-Downloader"
+REPOSITORY = "https://github.com/TuoLingTeam/KS-Downloader"
 LICENCE = "GNU General Public License v3.0"
-RELEASES = "https://github.com/JoeanAmier/KS-Downloader/releases/latest"
+RELEASES = "https://github.com/TuoLingTeam/KS-Downloader/releases/latest"
 DISCLAIMER_TEXT = (
     "关于 KS-Downloader 的 免责声明：\n"
     "\n"

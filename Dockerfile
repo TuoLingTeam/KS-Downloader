@@ -25,7 +25,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # 添加元数据标签
-LABEL name="KS-Downloader" authors="JoeanAmier" repository="https://github.com/JoeanAmier/KS-Downloader"
+LABEL name="KS-Downloader" authors="JoeanAmier" repository="https://github.com/TuoLingTeam/KS-Downloader"
 
 # 从构建器阶段，将已经安装好的依赖包复制到最终镜像的系统路径中
 COPY --from=builder /install /usr/local

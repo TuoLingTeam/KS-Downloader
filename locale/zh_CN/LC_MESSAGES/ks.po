@@ -26,7 +26,7 @@ msgid "读取并写入 Cookie 成功！"
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:123
-msgid "请选择 KS-Downloader 功能"
+msgid "请选择功能(输入序号并按Enter键)"
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:138
@@ -90,7 +90,7 @@ msgid "获取作品数据失败"
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:328
-msgid "是否已仔细阅读上述免责声明(YES/NO): "
+msgid "是否已仔细阅读上述免责声明(输入YES或NO并按Enter键): "
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:407

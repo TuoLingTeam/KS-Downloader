@@ -120,7 +120,7 @@ class KS:
         while self.running:
             self.__update_menu()
             function = choose(
-                _("请选择 KS-Downloader 功能"),
+                _("请选择功能(输入序号并按Enter键)"),
                 [i for i, __ in self.__function],
                 self.console,
             )
@@ -325,7 +325,7 @@ class KS:
             style=MASTER,
         )
         if self.console.input(
-            _("是否已仔细阅读上述免责声明(YES/NO): ")
+            _("是否已仔细阅读上述免责声明(输入YES或NO并按Enter键): ")
         ).upper() not in (
             "YES",
             "Y",
@@ -347,7 +347,7 @@ class KS:
             ),
         )
         language = choose(
-            "请选择语言(Please Select Language)",
+            "请选择语言(输入序号并按Enter键)",
             [i[0] for i in languages],
             self.console,
         )

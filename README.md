@@ -40,7 +40,7 @@
 <img src="docs/项目截图CN.png" alt="">
 <h1>🥣 使用方法</h1>
 <h2>🖱 程序运行</h2>
-<p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/KS-Downloader/releases/latest">Releases</a> 或者 <a href="https://github.com/JoeanAmier/KS-Downloader/actions">Actions</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用！</p>
+<p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/TuoLingTeam/KS-Downloader/releases/latest">Releases</a> 或者 <a href="https://github.com/TuoLingTeam/KS-Downloader/actions">Actions</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用！</p>
 <p>⭐ 本项目包含自动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
 <p>⭐ 自动构建可执行文件教程请查阅本文档的 <code>构建可执行文件指南</code> 部分；如果需要更加详细的图文教程，请 <a href="https://mp.weixin.qq.com/s/TorfoZKkf4-x8IBNLImNuw">查阅文章</a>！</p>
 <p><strong>注意：Mac OS 平台可执行文件 <code>main</code> 可能需要从终端命令行启动；受设备限制，Mac OS 平台可执行文件尚未经过测试，无法保证可用性！</strong></p>
@@ -53,7 +53,7 @@
 
 [//]: # (<li>安装版本号不低于 <code>3.12</code> 的 Python 解释器</li>)
 <li>安装版本号为 <code>3.12</code> 的 Python 解释器</li>
-<li>下载本项目最新的源码或 <a href="https://github.com/JoeanAmier/KS-Downloader/releases/latest">Releases</a> 发布的源码至本地</li>
+<li>下载本项目最新的源码或 <a href="https://github.com/TuoLingTeam/KS-Downloader/releases/latest">Releases</a> 发布的源码至本地</li>
 <li>打开终端，切换至项目根路径</li>
 <li>运行 <code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</code> 命令安装程序所需模块</li>
 <li>运行 <code>main.py</code> 即可使用</li>
@@ -314,9 +314,9 @@ A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fo
 <li>使用者对本项目的使用由使用者自行决定，并自行承担风险。作者对使用者使用本项目所产生的任何损失、责任、或风险概不负责。</li>
 <li>本项目的作者提供的代码和功能是基于现有知识和技术的开发成果。作者按现有技术水平努力确保代码的正确性和安全性，但不保证代码完全没有错误或缺陷。</li>
 <li>本项目依赖的所有第三方库、插件或服务各自遵循其原始开源或商业许可，使用者需自行查阅并遵守相应协议，作者不对第三方组件的稳定性、安全性及合规性承担任何责任。</li>
-<li>使用者在使用本项目时必须严格遵守 <a href="https://github.com/JoeanAmier/KS-Downloader/blob/master/LICENSE">GNU
+<li>使用者在使用本项目时必须严格遵守 <a href="https://github.com/TuoLingTeam/KS-Downloader/blob/master/LICENSE">GNU
     General Public License v3.0</a> 的要求，并在适当的地方注明使用了 <a
-        href="https://github.com/JoeanAmier/KS-Downloader/blob/master/LICENSE">GNU General Public License
+        href="https://github.com/TuoLingTeam/KS-Downloader/blob/master/LICENSE">GNU General Public License
     v3.0</a> 的代码。
 </li>
 <li>使用者在使用本项目的代码和功能时，必须自行研究相关法律法规，并确保其使用行为合法合规。任何因违反法律法规而导致的法律责任和风险，均由使用者自行承担。</li>

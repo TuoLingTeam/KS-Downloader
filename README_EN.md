@@ -41,7 +41,7 @@
 <img src="docs/项目截图EN.png" alt="">
 <h1>🥣 Usage Guide</h1>
 <h2>🖱 Application Execution</h2>
-<p>⭐ Mac OS/Windows 10+ users: Download pre-built packages from <a href="https://github.com/JoeanAmier/KS-Downloader/releases/latest">Releases</a> or <a href="https://github.com/JoeanAmier/KS-Downloader/actions">Actions</a>. Extract and double-click <code>main</code> to run!</p>
+<p>⭐ Mac OS/Windows 10+ users: Download pre-built packages from <a href="https://github.com/TuoLingTeam/KS-Downloader/releases/latest">Releases</a> or <a href="https://github.com/TuoLingTeam/KS-Downloader/actions">Actions</a>. Extract and double-click <code>main</code> to run!</p>
 <p>⭐ This project includes GitHub Actions for automatic builds - users can compile latest source code into executables anytime!</p>
 <p>⭐ For the automatic building executable files tutorial, please refer to the <code>Build of Executable File Guide</code> section of this document. If you need a more detailed step-by-step tutorial with illustrations, please <a href="https://mp.weixin.qq.com/s/TorfoZKkf4-x8IBNLImNuw">check out this article</a>!</p>
 <p><strong>Note: Mac OS executable <code>main</code> may require terminal execution. Limited by testing devices, Mac version hasn't been fully validated.</strong></p>
@@ -52,7 +52,7 @@
 <h2>⌨️ Source Code Execution</h2>
 <ol>
 <li>Install Python interpreter version <code>3.12</code></li>
-<li>Download latest source code from repository or <a href="https://github.com/JoeanAmier/KS-Downloader/releases/latest">Releases</a></li>
+<li>Download latest source code from repository or <a href="https://github.com/TuoLingTeam/KS-Downloader/releases/latest">Releases</a></li>
 <li>Open terminal and navigate to project root directory</li>
 <li>Install dependencies: <code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</code></li>
 <li>Execute <code>main.py</code> to start</li>
@@ -322,7 +322,7 @@ A:
 - Check the run logs to understand the cause of the failure
 - Ensure there are no syntax errors or dependency issues in the code
 - If the problem persists, please open an issue on
-  the [Issues page](https://github.com/JoeanAmier/KS-Downloader/issues)
+  the [Issues page](https://github.com/TuoLingTeam/KS-Downloader/issues)
 
 ### Q3: Can I directly use the Actions from the main repository?
 
@@ -334,7 +334,7 @@ repository to execute the build process
 <li>The user's use of this project is entirely at their own discretion and responsibility. The author assumes no liability for any losses, claims, or risks arising from the user's use of this project.</li>
 <li>The code and functionalities provided by the author of this project are based on current knowledge and technological developments. The author strives to ensure the correctness and security of the code according to existing technical capabilities but does not guarantee that the code is entirely free of errors or defects.</li>
 <li>All third-party libraries, plugins, or services relied upon by this project follow their respective open-source or commercial licenses. Users must review and comply with those license agreements. The author assumes no responsibility for the stability, security, or compliance of third-party components.</li>
-<li>Users must strictly comply with the requirements of the <a href="https://github.com/JoeanAmier/KS-Downloader/blob/master/LICENSE">GNU General Public License v3.0</a> when using this project and properly indicate that the code was used under the <a href="https://github.com/JoeanAmier/KS-Downloader/blob/master/LICENSE">GNU General Public License v3.0</a>.</li>
+<li>Users must strictly comply with the requirements of the <a href="https://github.com/TuoLingTeam/KS-Downloader/blob/master/LICENSE">GNU General Public License v3.0</a> when using this project and properly indicate that the code was used under the <a href="https://github.com/TuoLingTeam/KS-Downloader/blob/master/LICENSE">GNU General Public License v3.0</a>.</li>
 <li>When using the code and features of this project, users must independently research relevant laws and regulations and ensure their actions are legal and compliant. Any legal liabilities or risks arising from violations of laws and regulations shall be borne solely by the user.</li>
 <li>Users must not use this tool to engage in any activities that infringe intellectual property rights, including but not limited to downloading or distributing copyright-protected content without authorization. The developers do not participate in, support, or endorse any unauthorized acquisition or distribution of illegal content.</li>
 <li>This project assumes no responsibility for the compliance of any data processing activities (including collection, storage, and transmission) conducted by users. Users must comply with relevant laws and regulations and ensure that their processing activities are lawful and proper. Legal liabilities resulting from non-compliant operations shall be borne by the user.</li>

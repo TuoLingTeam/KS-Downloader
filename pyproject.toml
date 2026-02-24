@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/JoeanAmier/KS-Downloader"
+Repository = "https://github.com/TuoLingTeam/KS-Downloader"
 
 [tool.uv.pip]
 index-url = "https://mirrors.ustc.edu.cn/pypi/simple"
