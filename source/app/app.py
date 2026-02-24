@@ -100,7 +100,7 @@ class KS:
 
     async def __detail_enquire(self):
         while self.running:
-            text = self.console.input(_("请输入快手作品链接："))
+            text = self.console.input(_("请输入快手作品链接并按Enter键："))
             if not text:
                 break
             if text.upper() == "Q":

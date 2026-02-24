@@ -31,7 +31,7 @@ class Config:
         "chunk": 2 * 1024 * 1024,
         "user_agent": PC_USERAGENT,
         "folder_mode": False,
-        "author_archive": False,
+        "author_archive": true,
     }
     encode = "UTF-8-SIG" if system() == "Windows" else "UTF-8"
 

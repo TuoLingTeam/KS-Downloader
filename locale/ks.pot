@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:103
-msgid "请输入快手作品链接："
+msgid "请输入快手作品链接并按Enter键："
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:117
