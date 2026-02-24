@@ -192,10 +192,7 @@ class KS:
         self.console.print("\n")
         self.console.print(self.LINE, style=MASTER)
         self.console.print()
-        self.console.print(_("项目地址：{repo}").format(repo=REPOSITORY), style=MASTER)
-        self.console.print(
-            _("开源协议：{licence}").format(licence=LICENCE), style=MASTER
-        )
+        self.console.print(_("微信公众号：驼铃电商技术团"), style=MASTER)
         self.console.print()
 
     async def detail(

@@ -66,13 +66,7 @@ msgid "修改设置成功！"
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:195
-#, python-brace-format
-msgid "项目地址：{repo}"
-msgstr ""
-
-#: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:197
-#, python-brace-format
-msgid "开源协议：{licence}"
+msgid "微信公众号：驼铃电商技术团"
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:210
