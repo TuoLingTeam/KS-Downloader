@@ -174,7 +174,6 @@ RichLog {
 .disclaimer-text {
     width: 100%;
     padding: 1 2;
-    line-height: 1.5;
 }
 
 .disclaimer-buttons {
@@ -187,10 +186,6 @@ RichLog {
 /* Modal Screen Base */
 ModalScreen {
     align: center middle;
-}
-
-ModalScreen > Grid {
-    box-shadow: 0 0 8 2 rgba(0, 0, 0, 0.5);
 }
 
 /* Header & Footer */
