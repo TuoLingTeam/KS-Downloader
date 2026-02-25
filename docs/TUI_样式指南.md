@@ -398,6 +398,10 @@ transform: scale(1.1);                         /* CSS 变换 */
 transition: all 0.3s;                          /* CSS 过渡 */
 animation: fadeIn 1s;                          /* CSS 动画 */
 opacity: 0.5;                                  /* 不透明度（使用颜色透明度代替） */
+
+/* ❌ CSS 变量也不支持 */
+--my-color: #FF0000;                           /* CSS 变量定义 */
+color: var(--my-color);                        /* CSS 变量使用 */
 ```
 
 ### 替代方案
@@ -410,6 +414,7 @@ opacity: 0.5;                                  /* 不透明度（使用颜色透
 | 字体 | `font-family: ...` | 使用终端默认字体 |
 | 动画 | `animation: ...` | 使用 Textual 内置动画系统 |
 | 过渡 | `transition: ...` | Textual 自动处理状态过渡 |
+| CSS 变量 | `--var: value` | 直接使用 Textual 主题变量 `$primary` |
 
 ### Textual 支持的样式特性
 
@@ -479,6 +484,7 @@ scrollbar-gutter: stable;
 .my-class {
     line-height: 1.5;
     box-shadow: 0 0 10px black;
+    --my-color: #FF0000;  /* CSS 变量 */
 }
 
 /* ✅ 正确：使用 Textual 支持的属性 */
@@ -486,6 +492,7 @@ scrollbar-gutter: stable;
     padding: 1;
     border: round $primary;
     background: $panel;
+    color: $accent;  /* 直接使用主题颜色 */
 }
 ```
 

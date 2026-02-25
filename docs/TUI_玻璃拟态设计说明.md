@@ -259,25 +259,32 @@ border: round $primary 20%;
 
 ## 主题变量
 
+Textual 不支持自定义 CSS 变量，但提供了内置的主题颜色系统：
+
 ```css
-/* 可以通过修改这些变量自定义主题 */
---bg-primary: #0A0E27;        /* 主背景 */
---bg-secondary: #0F172A;      /* 次背景 */
---bg-surface: #1E293B;        /* 表面色 */
+/* ✅ Textual 内置主题颜色 */
+$primary          /* 主题主色 */
+$secondary        /* 主题次色 */
+$accent           /* 强调色 */
+$warning          /* 警告色 */
+$error            /* 错误色 */
+$success          /* 成功色 */
+$background       /* 背景色 */
+$surface          /* 表面色 */
+$panel            /* 面板色 */
+$text             /* 文本色 */
 
---glass-light: #FFFFFF 15%;   /* 玻璃浅色 */
---glass-border: #FFFFFF 20%;  /* 玻璃边框 */
---glass-hover: #FFFFFF 25%;   /* 玻璃悬停 */
+/* 颜色修饰符 */
+$primary-lighten-1    /* 变亮一级 */
+$primary-lighten-2    /* 变亮两级 */
+$primary-darken-1     /* 变暗一级 */
 
---accent-primary: #22C55E;    /* 主强调色 */
---accent-secondary: #3B82F6;  /* 次强调色 */
---accent-warning: #F59E0B;    /* 警告色 */
---accent-error: #EF4444;      /* 错误色 */
-
---text-primary: #F8FAFC;      /* 主文本 */
---text-secondary: #CBD5E1;    /* 次文本 */
---text-muted: #64748B;        /* 弱化文本 */
+/* 透明度 */
+$primary 50%          /* 50% 透明度 */
+$accent 20%           /* 20% 透明度 */
 ```
+
+**注意：** 不要尝试使用 `--variable-name` 语法定义自定义变量，这会导致解析错误。
 
 ## 使用建议
 
@@ -296,23 +303,36 @@ border: round $primary 20%;
 ## 自定义指南
 
 ### 修改主色调
-```css
-/* 将绿色改为蓝色 */
---accent-primary: #3B82F6;  /* 原来是 #22C55E */
+通过更改 Textual 应用的主题来修改颜色：
+
+```python
+# 在 app.py 中
+class KSDownloader(App):
+    async def on_mount(self) -> None:
+        self.theme = "nord"  # 或其他主题
 ```
+
+可用主题: `nord`, `dracula`, `monokai`, `gruvbox` 等
 
 ### 调整透明度
 ```css
 /* 增加玻璃效果强度 */
---glass-light: #FFFFFF 20%;   /* 原来是 15% */
---glass-border: #FFFFFF 30%;  /* 原来是 20% */
+background: $surface 20%;   /* 原来是 15% */
+border: round $primary 30%; /* 原来是 20% */
 ```
 
 ### 改变背景深度
+通过修改 CSS 文件中的透明度值：
+
 ```css
 /* 使用更深的背景 */
---bg-primary: #000000;        /* 纯黑 */
---bg-secondary: #0A0E27;      /* 深蓝 */
+ScrollableContainer {
+    background: $surface 2%;  /* 更浅的背景 */
+}
+
+#input-section {
+    background: $panel 5%;    /* 更浅的面板 */
+}
 ```
 
 ## 测试清单
