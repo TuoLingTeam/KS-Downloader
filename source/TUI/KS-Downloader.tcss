@@ -1,0 +1,53 @@
+Button {
+    width: 1fr;
+    margin: 1 1;
+}
+
+.horizontal-layout {
+    layout: horizontal;
+    height: auto;
+}
+
+Label, Link {
+    width: 100%;
+    content-align-horizontal: center;
+    content-align-vertical: middle;
+}
+
+Label.params {
+    margin: 1 0 0 0;
+    color: $primary;
+}
+
+Label.prompt {
+    padding: 1;
+}
+
+.loading {
+    grid-size: 1 2;
+    grid-gutter: 1;
+    width: 40vw;
+    height: 5;
+    border: double $primary;
+}
+
+#disclaimer {
+    grid-size: 1 3;
+    width: 90vw;
+    height: 80vh;
+    border: double $primary;
+}
+
+.disclaimer-text {
+    width: 100%;
+    padding: 1 2;
+}
+
+.disclaimer-buttons {
+    grid-size: 2 1;
+    height: auto;
+}
+
+ModalScreen {
+    align: center middle;
+}

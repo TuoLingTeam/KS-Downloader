@@ -91,12 +91,32 @@ class KS:
         self.__function = None
 
     async def run(self):
-        self.config = await self.database.read_config()
-        self.option = await self.database.read_option()
-        self.set_language(self.option["Language"])
+        await self.bootstrap()
         self.__welcome()
         if await self.disclaimer():
             await self.__main_menu()
+
+    async def bootstrap(self):
+        self.config = await self.database.read_config()
+        self.option = await self.database.read_option()
+        self.set_language(self.option["Language"])
+
+    async def _ensure_bootstrap(self):
+        if self.config is None or self.option is None:
+            await self.bootstrap()
+
+    def bind_output(
+        self,
+        sink,
+        mirror_stdout: bool = False,
+    ):
+        self.console.set_sink(
+            sink,
+            mirror_stdout=mirror_stdout,
+        )
+
+    def unbind_output(self):
+        self.console.clear_sink()
 
     async def __detail_enquire(self):
         while self.running:
@@ -109,12 +129,26 @@ class KS:
             await self.detail(text)
 
     async def __read_cookie(self):
+        await self.read_browser_cookie()
+
+    async def read_browser_cookie(self) -> bool:
         if c := BrowserCookie.run(
             self.DOMAINS,
             self.console,
         ):
             self.config_obj.write(self.config_obj.read() | {"cookie": c})
+            self.__apply_cookie(c)
             self.console.print(_("读取并写入 Cookie 成功！"), style=INFO)
+            return True
+        return False
+
+    def __apply_cookie(self, cookie: str):
+        self.manager.cookie = cookie
+        self.manager.pc_headers["Cookie"] = cookie
+        self.manager.pc_data_headers["Cookie"] = cookie
+        self.manager.app_headers["Cookie"] = cookie
+        self.manager.app_data_headers["Cookie"] = cookie
+        self.examiner.cookie = cookie
 
     async def __main_menu(self):
         while self.running:
@@ -161,25 +195,36 @@ class KS:
         await self._update_language(language)
 
     async def __update_version(self):
+        message, style, __ = await self.check_update_status()
+        self.console.print(message, style=style)
+
+    async def check_update_status(self) -> tuple[str, str, str]:
+        await self._ensure_bootstrap()
         if target := await self.version.get_target_version():
             state = self.version.compare_versions(
                 f"{self.VERSION_MAJOR}.{self.VERSION_MINOR}",
                 target,
                 self.VERSION_BETA,
             )
-            self.console.print(
-                self.version.STATUS_CODE[state], style=INFO if state == 1 else WARNING
+            return (
+                self.version.STATUS_CODE[state],
+                INFO if state == 1 else WARNING,
+                "information" if state == 1 else "warning",
             )
-        else:
-            self.console.print(_("检测新版本失败"), style=ERROR)
+        return _("检测新版本失败"), ERROR, "error"
 
     async def __modify_record(self):
+        await self.toggle_record_switch()
+
+    async def toggle_record_switch(self) -> bool:
+        await self._ensure_bootstrap()
         await self.__update_config("Record", 0 if self.config["Record"] else 1)
         self.database.record = self.config["Record"]
         self.console.print(
             _("修改设置成功！"),
             style=INFO,
         )
+        return bool(self.config["Record"])
 
     async def __update_config(self, key: str, value: int):
         self.config[key] = value
@@ -212,6 +257,54 @@ class KS:
                 url,
                 download,
             )
+
+    async def process_links(
+        self,
+        text: str,
+        download: bool = True,
+    ) -> dict:
+        await self._ensure_bootstrap()
+        urls = await self.examiner.run(
+            text,
+        )
+        if not urls:
+            message = _("提取作品链接失败")
+            self.console.warning(message)
+            return {
+                "success": 0,
+                "fail": 0,
+                "message": message,
+                "severity": "warning",
+                "data": [],
+            }
+        success = 0
+        fail = 0
+        data = []
+        for url in urls:
+            if isinstance(result := await self.detail_one(url, download), dict):
+                success += 1
+                data.append(result)
+            else:
+                fail += 1
+                self.console.warning(str(result))
+        if success and not fail:
+            severity = "information"
+        elif success:
+            severity = "warning"
+        else:
+            severity = "error"
+        message = _("处理完成：成功 {success}，失败 {fail}").format(
+            success=success,
+            fail=fail,
+        )
+        self.console.print(message, style=INFO if success else WARNING)
+        return {
+            "success": success,
+            "fail": fail,
+            "message": message,
+            "severity": severity,
+            "data": data,
+        }
 
     async def detail_one(
         self,
@@ -358,6 +451,31 @@ class KS:
         self.option["Language"] = language
         await self.database.update_option_data("Language", language)
         self.set_language(language)
+
+    async def set_language_option(self, language: str) -> str:
+        await self._ensure_bootstrap()
+        if language not in ("zh_CN", "en_US"):
+            raise ValueError(language)
+        await self._update_language(language)
+        self.console.print(_("修改设置成功！"), style=INFO)
+        return language
+
+    async def needs_disclaimer(self) -> bool:
+        await self._ensure_bootstrap()
+        return not bool(self.config["Disclaimer"])
+
+    async def accept_disclaimer(self):
+        await self._ensure_bootstrap()
+        await self.__update_config("Disclaimer", 1)
+        self.console.print(_("修改设置成功！"), style=INFO)
+
+    async def runtime_options(self) -> dict:
+        await self._ensure_bootstrap()
+        return {
+            "language": self.option["Language"],
+            "record": bool(self.config["Record"]),
+            "disclaimer": bool(self.config["Disclaimer"]),
+        }
 
     async def close(self):
         await self.manager.close()

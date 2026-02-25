@@ -26,6 +26,8 @@ class ColorConsole(Console):
         debug_mode: bool = False,
     ):
         super().__init__()
+        self._sink = None
+        self._mirror_stdout = True
         self.debug = self.init_debug(
             debug_mode,
         )
@@ -47,7 +49,17 @@ class ColorConsole(Console):
         highlight: Optional[bool] = False,
         **kwargs,
     ) -> None:
-        super().print(*objects, style=style or GENERAL, highlight=highlight, **kwargs)
+        if self._mirror_stdout:
+            super().print(
+                *objects,
+                style=style or GENERAL,
+                highlight=highlight,
+                **kwargs,
+            )
+        self._write_sink(
+            *objects,
+            style=style or GENERAL,
+        )
 
     def input(
         self,
@@ -56,6 +68,42 @@ class ColorConsole(Console):
         **kwargs,
     ) -> str:
         return super().input(Text(prompt, style=style or PROMPT), **kwargs)
+
+    def set_sink(
+        self,
+        sink,
+        mirror_stdout: bool = False,
+    ) -> None:
+        self._sink = sink
+        self._mirror_stdout = mirror_stdout
+
+    def clear_sink(self) -> None:
+        self._sink = None
+        self._mirror_stdout = True
+
+    def _write_sink(
+        self,
+        *objects: Any,
+        style: Optional[Union[str, Style]] = None,
+    ) -> None:
+        if not self._sink:
+            return
+        message = " ".join(str(i) for i in objects)
+        try:
+            self._sink.write(
+                Text(
+                    message,
+                    style=style or GENERAL,
+                ),
+                scroll_end=True,
+            )
+        except TypeError:
+            self._sink.write(
+                Text(
+                    message,
+                    style=style or GENERAL,
+                )
+            )
 
     def info(self, message: str):
         self.print(message, style=INFO)

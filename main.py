@@ -1,7 +1,7 @@
 from asyncio import run
 import argparse
 from sys import argv
-from source import KS
+from source import KS, KSDownloader
 from asyncio.exceptions import CancelledError
 
 
@@ -32,8 +32,11 @@ async def main():
         type=int,
         default=5557,
     )
+    subparsers.add_parser(
+        "legacy",
+    )
     if len(argv) == 1:
-        await terminal()
+        await tui()
     else:
         args, unknown = parser.parse_known_args()
         if unknown:
@@ -42,8 +45,15 @@ async def main():
             )
         if args.mode == "api":
             await api_server(args.host, args.port)
+        elif args.mode == "legacy":
+            await terminal()
         else:
             print("Unsupported command-line parameters")
+
+@capture_exit
+async def tui():
+    async with KSDownloader() as app:
+        await app.run_async()
 
 @capture_exit
 async def terminal():
