@@ -2,7 +2,6 @@ from asyncio import run
 import argparse
 from sys import argv
 from source import KS
-from source.TUI import KSDownloaderApp
 from asyncio.exceptions import CancelledError
 
 
@@ -46,12 +45,10 @@ async def main():
         else:
             print("Unsupported command-line parameters")
 
-
 @capture_exit
 async def terminal():
-    async with KSDownloaderApp() as app:
-        await app.run_async()
-
+    async with KS() as app:
+        await app.run()
 
 @capture_exit
 async def api_server(

@@ -57,20 +57,6 @@
 <li>Install dependencies: <code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</code></li>
 <li>Execute <code>main.py</code> to start</li>
 </ol>
-<h3>🖥 TUI Mode</h3>
-<ul>
-<li>Start TUI by default: <code>python main.py</code></li>
-<li>Start API service: <code>python main.py api</code></li>
-<li>Core dependencies: <code>textual</code>, <code>pyperclip</code></li>
-</ul>
-<h3>⌨️ TUI Shortcuts</h3>
-<ul>
-<li><code>Q</code>: Quit</li>
-<li><code>S</code>: Open settings</li>
-<li><code>U</code>: Check updates</li>
-<li><code>A</code>: Open about screen</li>
-<li><code>B</code>: Back to home from sub-screens</li>
-</ul>
 <h2>⌨️ Docker Execution</h2>
 <ol>
 <li>Obtain Image:
