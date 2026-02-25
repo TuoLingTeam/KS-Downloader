@@ -1,52 +1,54 @@
 /* ========================================
-   KS-Downloader TUI Styles - Glassmorphism
-   Modern frosted glass aesthetic for terminal
+   KS-Downloader TUI Styles - Enhanced Visibility
+   Optimized for clarity and readability
    ======================================== */
 
-/* Global Button Styles - Glass Effect */
+/* Global Button Styles - High Contrast */
 Button {
     width: 1fr;
     margin: 1 1;
     min-width: 16;
-    background: $surface 15%;
-    border: tall $primary 20%;
+    background: $primary 40%;
+    border: tall $primary;
     color: $text;
+    text-style: bold;
 }
 
 Button:hover {
-    background: $primary 25%;
+    background: $primary 60%;
     border: tall $accent;
 }
 
 Button:focus {
     text-style: bold;
     border: tall $accent;
-    background: $primary 30%;
+    background: $primary 70%;
 }
 
 Button.-primary {
-    background: $success 20%;
+    background: $success 50%;
     color: $text;
-    border: tall $success;
+    border: tall $success-lighten-1;
     text-style: bold;
 }
 
 Button.-primary:hover {
-    background: $success 30%;
-    border: tall $success-lighten-1;
+    background: $success 70%;
+    border: tall $success-lighten-2;
 }
 
 Button.-warning {
-    background: $warning 20%;
+    background: $warning 50%;
     color: $text;
-    border: tall $warning;
+    border: tall $warning-lighten-1;
+    text-style: bold;
 }
 
 Button.-warning:hover {
-    background: $warning 30%;
+    background: $warning 70%;
 }
 
-/* Layout Containers - Layered Glass */
+/* Layout Containers */
 .horizontal-layout {
     layout: horizontal;
     height: auto;
@@ -55,7 +57,6 @@ Button.-warning:hover {
 
 ScrollableContainer {
     padding: 1 2;
-    background: $surface 5%;
 }
 
 Container {
@@ -65,13 +66,13 @@ Container {
 #input-section {
     height: auto;
     max-height: 40%;
-    background: $panel 10%;
-    border: round $primary 15%;
+    background: $panel 20%;
+    border: round $primary;
     padding: 1;
     margin: 1 0;
 }
 
-/* Text Elements - Enhanced Contrast */
+/* Text Elements - High Contrast */
 Label, Link {
     width: 100%;
     content-align-horizontal: center;
@@ -80,21 +81,22 @@ Label, Link {
 
 Label.params {
     margin: 1 0 0 0;
-    color: $accent;
+    color: $accent-lighten-1;
     text-style: bold;
 }
 
 Label.prompt {
     padding: 1;
-    background: $primary 15%;
-    border: round $accent 30%;
+    background: $primary 30%;
+    border: round $accent;
     margin: 1 0;
     color: $text;
+    text-style: bold;
 }
 
 Label.status {
     padding: 1;
-    background: $surface 20%;
+    background: $surface 40%;
     border-left: thick $accent;
     margin: 1 0;
     color: $text;
@@ -102,42 +104,52 @@ Label.status {
 
 Link {
     text-style: bold underline;
-    color: $accent;
-}
-
-Link:hover {
-    background: $accent 15%;
     color: $accent-lighten-1;
 }
 
-/* Input Fields - Glass Style */
+Link:hover {
+    background: $accent 30%;
+    color: $accent-lighten-2;
+}
+
+/* Input Fields - Enhanced Visibility */
 Input {
-    border: tall $primary 30%;
-    background: $surface 10%;
+    border: tall $accent;
+    background: $surface 30%;
     margin: 1 0;
+    color: $text;
 }
 
 Input:focus {
-    border: tall $accent;
-    background: $surface 15%;
+    border: tall $accent-lighten-1;
+    background: $surface 40%;
+}
+
+Input > .input--cursor {
+    color: $accent;
+}
+
+Input > .input--placeholder {
+    color: $text-muted;
 }
 
 Select {
-    border: tall $primary 30%;
-    background: $surface 10%;
+    border: tall $accent;
+    background: $surface 30%;
     margin: 1 0;
+    color: $text;
 }
 
 Select:focus {
-    border: tall $accent;
-    background: $surface 15%;
+    border: tall $accent-lighten-1;
+    background: $surface 40%;
 }
 
-/* Log Display - Frosted Panel */
+/* Log Display - Clear Panel */
 #log {
     height: 1fr;
-    border: double $primary 25%;
-    background: $surface 8%;
+    border: double $primary;
+    background: $surface 15%;
     margin: 1 0;
     padding: 1;
 }
@@ -146,22 +158,22 @@ RichLog {
     scrollbar-gutter: stable;
 }
 
-/* Loading Modal - Glass Overlay */
+/* Loading Modal */
 .loading {
     grid-size: 1 2;
     grid-gutter: 1;
     grid-rows: auto 1fr;
     width: 50;
     height: 9;
-    border: double $accent 40%;
-    background: $panel 20%;
+    border: double $accent;
+    background: $panel 40%;
     padding: 1;
 }
 
 .loading Label {
     text-align: center;
     text-style: bold;
-    color: $accent;
+    color: $accent-lighten-1;
 }
 
 .loading LoadingIndicator {
@@ -169,63 +181,62 @@ RichLog {
     color: $accent;
 }
 
-/* Modal Screen Base - Dark Overlay */
+/* Modal Screen Base */
 ModalScreen {
     align: center middle;
 }
 
-/* Header & Footer - Glass Navigation */
+/* Header & Footer - Clear Navigation */
 Header {
-    background: $primary 25%;
+    background: $primary 50%;
     color: $text;
-    border-bottom: solid $primary 30%;
+    border-bottom: solid $primary;
 }
 
 Footer {
-    background: $panel 20%;
-    border-top: solid $primary 20%;
+    background: $panel 40%;
+    border-top: solid $primary;
 }
 
 Footer .footer--key {
-    background: $primary 30%;
+    background: $primary 60%;
     color: $text;
     text-style: bold;
 }
 
-/* About Page - Elegant Glass Cards */
+/* About Page */
 .about-container {
     padding: 2;
-    background: $surface 5%;
 }
 
 .about-container Label {
     margin: 1 0;
     padding: 1;
-    background: $panel 10%;
-    border: round $primary 20%;
+    background: $panel 30%;
+    border: round $primary;
 }
 
 .about-container Link {
     padding: 1;
-    background: $accent 10%;
-    border: round $accent 25%;
+    background: $accent 30%;
+    border: round $accent;
 }
 
 .about-container Button {
     margin-top: 2;
 }
 
-/* Settings Page - Organized Glass Sections */
+/* Settings Page - Clear Sections */
 .settings-section {
-    border: round $primary 30%;
+    border: round $primary;
     padding: 2;
     margin: 1 0;
-    background: $surface 12%;
+    background: $surface 25%;
 }
 
 .settings-section:hover {
-    background: $surface 18%;
-    border: round $accent 25%;
+    background: $surface 35%;
+    border: round $accent;
 }
 
 .settings-section Label.params {
@@ -238,43 +249,47 @@ Footer .footer--key {
 }
 
 .settings-section Select {
-    background: $panel 15%;
+    background: $panel 30%;
 }
 
 /* Enhanced Visual Hierarchy */
 .card {
-    background: $surface 15%;
-    border: round $primary 25%;
+    background: $surface 30%;
+    border: round $primary;
     padding: 1;
     margin: 1 0;
 }
 
 .card:hover {
-    background: $surface 20%;
-    border: round $accent 30%;
+    background: $surface 40%;
+    border: round $accent;
 }
 
-/* Status Indicators */
+/* Status Indicators - High Contrast */
 .status-success {
-    color: $success;
-    background: $success 10%;
+    color: $success-lighten-1;
+    background: $success 20%;
     border-left: thick $success;
+    padding: 1;
 }
 
 .status-warning {
-    color: $warning;
-    background: $warning 10%;
+    color: $warning-lighten-1;
+    background: $warning 20%;
     border-left: thick $warning;
+    padding: 1;
 }
 
 .status-error {
-    color: $error;
-    background: $error 10%;
+    color: $error-lighten-1;
+    background: $error 20%;
     border-left: thick $error;
+    padding: 1;
 }
 
 .status-info {
-    color: $accent;
-    background: $accent 10%;
+    color: $accent-lighten-1;
+    background: $accent 20%;
     border-left: thick $accent;
+    padding: 1;
 }
