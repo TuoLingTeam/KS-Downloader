@@ -40,7 +40,7 @@ class Index(Screen):
                     Text(_("微信公众号：驼铃电商技术团"), style=MASTER),
                 ),
                 Label(
-                    Text(_("请输入快手作品链接，然后点击"下载作品文件"按钮"), style=PROMPT),
+                    Text(_("请输入快手作品链接，然后点击\"下载作品文件\"按钮"), style=PROMPT),
                     classes="prompt",
                 ),
                 Input(
