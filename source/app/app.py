@@ -9,7 +9,6 @@ from source.module import Database, choose
 from source.record import RecordManager
 from source.request import Detail
 from source.static import (
-    DISCLAIMER_TEXT,
     LICENCE,
     PROJECT_NAME,
     REPOSITORY,
