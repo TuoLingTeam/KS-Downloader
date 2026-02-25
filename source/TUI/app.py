@@ -4,7 +4,6 @@ from textual.app import App
 
 from ..app import KS
 from .about import About
-from .disclaimer import Disclaimer
 from .index import Index
 from .setting import Setting
 from .update import Update
@@ -35,15 +34,6 @@ class KSDownloader(App):
         self.theme = "nord"
         self.install_screen(Index(self.ks), name="index")
         await self.push_screen("index")
-        if await self.ks.needs_disclaimer():
-            await self.push_screen(
-                Disclaimer(self.ks),
-                callback=self._handle_disclaimer,
-            )
-
-    def _handle_disclaimer(self, accepted: bool) -> None:
-        if not accepted:
-            self.exit()
 
     def update_result(self, args: tuple[str, str]) -> None:
         self.notify(args[0], severity=args[1])

@@ -93,8 +93,7 @@ class KS:
     async def run(self):
         await self.bootstrap()
         self.__welcome()
-        if await self.disclaimer():
-            await self.__main_menu()
+        await self.__main_menu()
 
     async def bootstrap(self):
         self.config = await self.database.read_config()
@@ -406,25 +405,6 @@ class KS:
     async def user(self):
         pass
 
-    async def disclaimer(self):
-        if self.config["Disclaimer"]:
-            return True
-        await self.__init_language()
-        self.console.print(
-            _(DISCLAIMER_TEXT),
-            style=MASTER,
-        )
-        if self.console.input(
-            _("是否已仔细阅读上述免责声明(输入YES或NO并按Enter键): ")
-        ).upper() not in (
-            "YES",
-            "Y",
-        ):
-            return False
-        await self.database.update_config_data("Disclaimer", 1)
-        self.console.print()
-        return True
-
     async def __init_language(self):
         languages = (
             (
@@ -460,21 +440,11 @@ class KS:
         self.console.print(_("修改设置成功！"), style=INFO)
         return language
 
-    async def needs_disclaimer(self) -> bool:
-        await self._ensure_bootstrap()
-        return not bool(self.config["Disclaimer"])
-
-    async def accept_disclaimer(self):
-        await self._ensure_bootstrap()
-        await self.__update_config("Disclaimer", 1)
-        self.console.print(_("修改设置成功！"), style=INFO)
-
     async def runtime_options(self) -> dict:
         await self._ensure_bootstrap()
         return {
             "language": self.option["Language"],
             "record": bool(self.config["Record"]),
-            "disclaimer": bool(self.config["Disclaimer"]),
         }
 
     async def close(self):

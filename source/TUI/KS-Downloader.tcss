@@ -169,39 +169,6 @@ RichLog {
     color: $accent;
 }
 
-/* Disclaimer Modal - Warning Glass */
-#disclaimer {
-    grid-size: 1 3;
-    grid-rows: auto 1fr auto;
-    width: 90vw;
-    height: 80vh;
-    border: double $warning 40%;
-    background: $panel 25%;
-    padding: 1;
-}
-
-#disclaimer > Label.params {
-    text-align: center;
-    text-style: bold;
-    color: $warning;
-    padding: 1;
-    background: $warning 15%;
-    border-bottom: solid $warning 30%;
-}
-
-.disclaimer-text {
-    width: 100%;
-    padding: 1 2;
-    background: $surface 5%;
-}
-
-.disclaimer-buttons {
-    grid-size: 2 1;
-    grid-gutter: 1;
-    height: auto;
-    padding: 1;
-}
-
 /* Modal Screen Base - Dark Overlay */
 ModalScreen {
     align: center middle;

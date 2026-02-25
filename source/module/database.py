@@ -55,8 +55,7 @@ class Database:
 
     async def __write_default_config(self):
         await self.database.execute("""INSERT OR IGNORE INTO config_data (NAME, VALUE)
-                            VALUES ('Record', 1),
-                            ('Disclaimer', 0);""")
+                            VALUES ('Record', 1);""")
 
     async def __write_default_option(self):
         await self.database.execute("""INSERT OR IGNORE INTO option_data (NAME, VALUE)

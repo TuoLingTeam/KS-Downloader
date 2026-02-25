@@ -6,7 +6,6 @@ from .internal import (
     PROJECT_NAME,
     RELEASES,
     REPOSITORY,
-    DISCLAIMER_TEXT,
     LICENCE,
     __VERSION__,
 )
