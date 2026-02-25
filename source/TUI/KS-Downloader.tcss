@@ -3,30 +3,6 @@
    Modern frosted glass aesthetic for terminal
    ======================================== */
 
-/* Color Palette - Dark Glassmorphism */
-* {
-    /* Deep dark background */
-    --bg-primary: #0A0E27;
-    --bg-secondary: #0F172A;
-    --bg-surface: #1E293B;
-    
-    /* Glass effect colors */
-    --glass-light: #FFFFFF 15%;
-    --glass-border: #FFFFFF 20%;
-    --glass-hover: #FFFFFF 25%;
-    
-    /* Accent colors */
-    --accent-primary: #22C55E;
-    --accent-secondary: #3B82F6;
-    --accent-warning: #F59E0B;
-    --accent-error: #EF4444;
-    
-    /* Text colors */
-    --text-primary: #F8FAFC;
-    --text-secondary: #CBD5E1;
-    --text-muted: #64748B;
-}
-
 /* Global Button Styles - Glass Effect */
 Button {
     width: 1fr;
@@ -146,10 +122,6 @@ Input:focus {
     background: $surface 15%;
 }
 
-Input > .input--placeholder {
-    color: $text-muted;
-}
-
 Select {
     border: tall $primary 30%;
     background: $surface 10%;
@@ -172,8 +144,6 @@ Select:focus {
 
 RichLog {
     scrollbar-gutter: stable;
-    scrollbar-background: $surface 10%;
-    scrollbar-color: $primary 30%;
 }
 
 /* Loading Modal - Glass Overlay */
@@ -244,11 +214,6 @@ Header {
     border-bottom: solid $primary 30%;
 }
 
-Header .header--title {
-    text-style: bold;
-    color: $text;
-}
-
 Footer {
     background: $panel 20%;
     border-top: solid $primary 20%;
@@ -258,10 +223,6 @@ Footer .footer--key {
     background: $primary 30%;
     color: $text;
     text-style: bold;
-}
-
-Footer .footer--description {
-    color: $text-secondary;
 }
 
 /* About Page - Elegant Glass Cards */
@@ -311,59 +272,6 @@ Footer .footer--description {
 
 .settings-section Select {
     background: $panel 15%;
-}
-
-/* Notification Styles - Glass Toasts */
-Toast {
-    background: $panel 30%;
-    border: tall $primary 35%;
-}
-
-Toast.-information {
-    border: tall $accent 40%;
-    background: $accent 15%;
-}
-
-Toast.-warning {
-    border: tall $warning 40%;
-    background: $warning 15%;
-}
-
-Toast.-error {
-    border: tall $error 40%;
-    background: $error 15%;
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    background: $surface 10%;
-}
-
-::-webkit-scrollbar-thumb {
-    background: $primary 30%;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: $accent 40%;
-}
-
-/* Focus Ring - Accessibility */
-*:focus {
-    outline: none;
-}
-
-*:focus-visible {
-    border-color: $accent;
-}
-
-/* Screen Transitions */
-Screen {
-    background: $background;
-}
-
-/* Widget Defaults */
-Widget {
-    color: $text;
 }
 
 /* Enhanced Visual Hierarchy */
