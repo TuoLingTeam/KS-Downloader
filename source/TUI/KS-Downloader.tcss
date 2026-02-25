@@ -1,145 +1,238 @@
-Screen {
-    layout: vertical;
-}
+/* ========================================
+   KS-Downloader TUI Styles
+   Optimized for clarity and visual hierarchy
+   ======================================== */
 
-Header {
-    dock: top;
-}
-
-Footer {
-    dock: bottom;
-}
-
+/* Global Button Styles */
 Button {
     width: 1fr;
     margin: 1 1;
+    min-width: 16;
+    border: tall $primary;
 }
 
-Button#deal,
-Button#save_language,
-Button#accept {
-    color: $success;
+Button:hover {
+    background: $primary 20%;
+    border: tall $accent;
 }
 
-Button#clear,
-Button#back,
-Button#decline,
-Button#clear_log {
-    color: $error;
+Button:focus {
+    text-style: bold;
 }
 
-Button#settings,
-Button#update,
-Button#about,
-Button#toggle_record,
-Button#read_cookie,
-Button#update_about {
-    color: $accent;
+Button.-primary {
+    background: $primary;
+    color: $text;
+    border: tall $primary-lighten-2;
 }
 
-Label,
-Link {
+Button.-primary:hover {
+    background: $primary-lighten-1;
+    border: tall $accent;
+}
+
+Button.-warning {
+    background: $warning;
+    color: $text;
+    border: tall $warning-lighten-1;
+}
+
+Button.-warning:hover {
+    background: $warning-lighten-1;
+}
+
+/* Layout Containers */
+.horizontal-layout {
+    layout: horizontal;
+    height: auto;
+    padding: 0 1;
+}
+
+ScrollableContainer {
+    padding: 1 2;
+}
+
+Container {
+    height: auto;
+}
+
+#input-section {
+    height: auto;
+    max-height: 40%;
+}
+
+/* Text Elements */
+Label, Link {
     width: 100%;
+    content-align-horizontal: center;
+    content-align-vertical: middle;
 }
 
 Label.params {
     margin: 1 0 0 0;
-    color: $primary;
-}
-
-.section-card {
-    margin: 1 2 0 2;
-    border: round $primary;
-    padding: 0 1;
-    height: auto;
-}
-
-.hero-title {
-    content-align-horizontal: center;
+    color: $accent;
     text-style: bold;
-    margin: 1 0 0 0;
 }
 
-.hero-subtitle,
-.hero-tip {
-    content-align-horizontal: center;
-    margin: 0 0 1 0;
+Label.prompt {
+    padding: 1;
+    background: $panel;
+    border: round $primary;
+    margin: 1 0;
 }
 
-Input#url {
-    margin: 1 2 0 2;
-    border: round $accent;
+Label.status {
+    padding: 1;
+    background: $surface;
+    border-left: thick $accent;
+    margin: 1 0;
 }
 
-.horizontal-layout {
-    layout: horizontal;
-    margin: 0 1 0 1;
-    height: auto;
+Link {
+    text-style: bold underline;
+    color: $accent;
 }
 
-.status-line {
-    margin: 1 2 0 2;
-    color: $warning;
+Link:hover {
+    background: $accent 10%;
 }
 
-.log-title {
-    margin: 1 2 0 2;
-    color: $primary;
+/* Input Fields */
+Input {
+    border: tall $primary;
+    margin: 1 0;
 }
 
-RichLog#log {
-    margin: 0 2 1 2;
-    border: round $accent;
-    padding: 0 1;
+Input:focus {
+    border: tall $accent;
+}
+
+Select {
+    border: tall $primary;
+    margin: 1 0;
+}
+
+Select:focus {
+    border: tall $accent;
+}
+
+/* Log Display */
+#log {
     height: 1fr;
+    border: double $primary;
+    background: $surface;
+    margin: 1 0;
+    padding: 1;
 }
 
-.info-line {
-    margin: 0 2 0 2;
-    color: grey70;
+RichLog {
+    scrollbar-gutter: stable;
 }
 
+/* Loading Modal */
 .loading {
     grid-size: 1 2;
     grid-gutter: 1;
-    width: 44vw;
-    height: 6;
-    border: double $primary;
-    padding: 0 1;
+    grid-rows: auto 1fr;
+    width: 50;
+    height: 9;
+    border: double $accent;
+    background: $panel;
+    padding: 1;
 }
 
+.loading Label {
+    text-align: center;
+    text-style: bold;
+    color: $accent;
+}
+
+.loading LoadingIndicator {
+    height: 3;
+}
+
+/* Disclaimer Modal */
 #disclaimer {
-    grid-size: 1 4;
+    grid-size: 1 3;
+    grid-rows: auto 1fr auto;
     width: 90vw;
     height: 80vh;
-    border: double $primary;
-    padding: 0 1;
+    border: double $warning;
+    background: $panel;
+    padding: 1;
 }
 
-.disclaimer-title {
-    content-align-horizontal: center;
+#disclaimer > Label.params {
+    text-align: center;
     text-style: bold;
     color: $warning;
-}
-
-.disclaimer-tip {
-    content-align-horizontal: center;
-    color: grey70;
+    padding: 1;
+    background: $warning 10%;
+    border-bottom: solid $warning;
 }
 
 .disclaimer-text {
     width: 100%;
-    padding: 0 1;
-    border: round $accent;
-    margin: 0 1;
+    padding: 1 2;
+    line-height: 1.5;
 }
 
 .disclaimer-buttons {
     grid-size: 2 1;
-    margin: 0 1 0 1;
+    grid-gutter: 1;
     height: auto;
+    padding: 1;
 }
 
+/* Modal Screen Base */
 ModalScreen {
     align: center middle;
+}
+
+ModalScreen > Grid {
+    box-shadow: 0 0 8 2 rgba(0, 0, 0, 0.5);
+}
+
+/* Header & Footer */
+Header {
+    background: $primary;
+    color: $text;
+}
+
+Footer {
+    background: $panel;
+}
+
+Footer .footer--key {
+    background: $primary;
+    color: $text;
+}
+
+/* About Page Specific */
+.about-container {
+    padding: 2;
+}
+
+.about-container Label {
+    margin: 1 0;
+}
+
+.about-container Button {
+    margin-top: 2;
+}
+
+/* Settings Page Specific */
+.settings-section {
+    border: round $primary;
+    padding: 2;
+    margin: 1 0;
+    background: $surface;
+}
+
+.settings-section Label.params {
+    margin: 0 0 1 0;
+}
+
+.settings-section Button {
+    margin: 1 0 0 0;
 }

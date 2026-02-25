@@ -2,7 +2,7 @@ from rich.text import Text
 from textual import on
 from textual.app import ComposeResult
 from textual.binding import Binding
-from textual.containers import HorizontalScroll, ScrollableContainer
+from textual.containers import ScrollableContainer
 from textual.screen import Screen
 from textual.widgets import Button, Footer, Header, Label, Link
 
@@ -25,41 +25,23 @@ class About(Screen):
         yield ScrollableContainer(
             Label(
                 Text(PROJECT_NAME, style=MASTER),
-                classes="hero-title",
+                classes="prompt",
             ),
-            Label(
-                Text(_("专注于快手作品下载与数据提取"), style=INFO),
-                classes="hero-subtitle",
-            ),
-            classes="section-card",
-        )
-        yield ScrollableContainer(
             Label(
                 Text(_("程序版本：{version}").format(version=__VERSION__), style=INFO),
-                classes="params",
+                classes="prompt",
             ),
             Label(
                 Text(_("开源协议：{licence}").format(licence=LICENCE), style=INFO),
-                classes="params",
-            ),
-            Label(
-                _("项目地址"),
-                classes="params",
+                classes="prompt",
             ),
             Link(
                 REPOSITORY,
                 url=REPOSITORY,
                 tooltip=_("点击访问"),
             ),
-            Label(
-                _("感谢使用 KS-Downloader。"),
-                classes="info-line",
-            ),
-            HorizontalScroll(
-                Button(_("检查更新"), id="update_about"),
-                Button(_("返回首页"), id="back"),
-                classes="horizontal-layout",
-            ),
+            Button(_("返回首页"), id="back", variant="default"),
+            classes="about-container",
         )
         yield Footer()
 
@@ -69,10 +51,6 @@ class About(Screen):
     @on(Button.Pressed, "#back")
     async def back_button(self):
         await self.action_back()
-
-    @on(Button.Pressed, "#update_about")
-    async def update_button(self):
-        await self.action_update()
 
     async def action_back(self) -> None:
         await self.app.action_back()
