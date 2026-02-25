@@ -1,5 +1,6 @@
 from contextlib import suppress
 from pathlib import Path
+import sys
 
 from textual.app import App
 
@@ -16,8 +17,29 @@ class KSDownloaderApp(App[None]):
         "static/KS-Downloader.tcss"
     )
 
+    @classmethod
+    def resolve_css_path(cls) -> Path | None:
+        candidates: list[Path] = []
+
+        # PyInstaller onefile temporary extraction directory.
+        if meipass := getattr(sys, "_MEIPASS", None):
+            candidates.append(Path(meipass).joinpath("static/KS-Downloader.tcss"))
+
+        # Source tree and onedir _internal layout.
+        module_root = Path(__file__).resolve().parents[2]
+        candidates.append(module_root.joinpath("static/KS-Downloader.tcss"))
+
+        exe_dir = Path(sys.executable).resolve().parent
+        candidates.append(exe_dir.joinpath("_internal/static/KS-Downloader.tcss"))
+        candidates.append(exe_dir.joinpath("static/KS-Downloader.tcss"))
+
+        for candidate in candidates:
+            if candidate.exists():
+                return candidate
+        return None
+
     def __init__(self):
-        super().__init__()
+        super().__init__(css_path=self.resolve_css_path())
         self.ks: KS | None = None
 
     async def __aenter__(self):
