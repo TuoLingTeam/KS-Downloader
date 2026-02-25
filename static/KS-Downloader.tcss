@@ -1,0 +1,106 @@
+Screen {
+    layout: vertical;
+}
+
+Header {
+    dock: top;
+}
+
+Footer {
+    dock: bottom;
+}
+
+.vertical-layout {
+    width: 80vw;
+    max-width: 120;
+    min-width: 60;
+    margin: 1 1;
+    align: center top;
+}
+
+.horizontal-layout {
+    layout: horizontal;
+    width: 100%;
+    height: auto;
+    margin: 1 0;
+}
+
+Label.center-text {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 1 0;
+}
+
+Label.center-title {
+    width: 100%;
+    text-align: center;
+    text-style: bold;
+    margin: 0 0 1 0;
+}
+
+Button {
+    width: 1fr;
+    min-width: 16;
+    margin: 0 1 0 0;
+    background: #e11d48;
+    color: #ffffff;
+    border: none;
+}
+
+Button:hover {
+    background: #fb7185;
+}
+
+Button.-default {
+    background: #2563eb;
+}
+
+Button.-default:hover {
+    background: #3b82f6;
+}
+
+Button.-success {
+    background: #16a34a;
+}
+
+Button.-success:hover {
+    background: #22c55e;
+}
+
+Button.-error {
+    background: #dc2626;
+}
+
+Button.-error:hover {
+    background: #ef4444;
+}
+
+Input,
+Select {
+    width: 100%;
+    margin: 0 0 1 0;
+}
+
+#tip {
+    width: 100%;
+    height: 1fr;
+    border: round #4c566a;
+    margin: 1 2;
+    padding: 0 1;
+}
+
+#loading-dialog,
+#update-dialog {
+    width: 60;
+    height: auto;
+    padding: 1 2;
+    border: round #4c566a;
+    align: center middle;
+    background: #2e3440;
+}
+
+.about-card {
+    width: 100%;
+    border: round #4c566a;
+    padding: 1 2;
+}

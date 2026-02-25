@@ -15,9 +15,11 @@ dependencies = [
     "fastapi>=0.115.12",
     "httpx[socks]>=0.28.1",
     "lxml>=5.3.1",
+    "pyperclip>=1.9.0",
     "pyyaml>=6.0.2",
     "rich>=13.9.4",
     "rookiepy>=0.5.6",
+    "textual>=0.79.1",
     "uvicorn[standard]>=0.34.3",
 ]
 

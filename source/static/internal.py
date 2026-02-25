@@ -6,9 +6,10 @@ VERSION_MAJOR = 1
 VERSION_MINOR = 5
 VERSION_BETA = False
 __VERSION__ = f"{VERSION_MAJOR}.{VERSION_MINOR}.{'beta' if VERSION_BETA else 'stable'}"
-PROJECT_NAME = f"KS-Downloader V{VERSION_MAJOR}.{VERSION_MINOR} {
-    'Beta' if VERSION_BETA else 'Stable'
-}"
+PROJECT_NAME = (
+    f"KS-Downloader V{VERSION_MAJOR}.{VERSION_MINOR} "
+    f"{'Beta' if VERSION_BETA else 'Stable'}"
+)
 
 REPOSITORY = "https://github.com/TuoLingTeam/KS-Downloader"
 LICENCE = "GNU General Public License v3.0"

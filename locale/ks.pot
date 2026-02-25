@@ -260,6 +260,91 @@ msgstr ""
 msgid "{note}数据响应内容异常：{response}"
 msgstr ""
 
+msgid "退出"
+msgstr ""
+
+msgid "返回"
+msgstr ""
+
+#, python-brace-format
+msgid "版本号：{version}"
+msgstr ""
+
+msgid "关闭"
+msgstr ""
+
+msgid "Cookie"
+msgstr ""
+
+msgid "下载记录"
+msgstr ""
+
+msgid "启用下载记录"
+msgstr ""
+
+msgid "语言"
+msgstr ""
+
+msgid "保存配置"
+msgstr ""
+
+msgid "放弃更改"
+msgstr ""
+
+msgid "设置"
+msgstr ""
+
+msgid "配置保存成功"
+msgstr ""
+
+msgid "已放弃当前更改"
+msgstr ""
+
+msgid "正在检查版本更新..."
+msgstr ""
+
+msgid "更新"
+msgstr ""
+
+msgid "关于"
+msgstr ""
+
+msgid "请输入快手作品链接"
+msgstr ""
+
+msgid "多个链接之间使用空格分隔"
+msgstr ""
+
+msgid "下载作品文件"
+msgstr ""
+
+msgid "读取剪贴板"
+msgstr ""
+
+msgid "清空输入框"
+msgstr ""
+
+msgid "主页"
+msgstr ""
+
+msgid "欢迎使用 KS-Downloader"
+msgstr ""
+
+msgid "输入框已清空"
+msgstr ""
+
+msgid "剪贴板为空"
+msgstr ""
+
+msgid "已读取剪贴板内容"
+msgstr ""
+
+msgid "正在处理中，请稍候..."
+msgstr ""
+
+msgid "处理完成"
+msgstr ""
+
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\request\template.py:173
 #, python-brace-format
 msgid "{note}数据响应内容为空"

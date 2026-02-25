@@ -67,7 +67,7 @@ msgstr ""
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:195
 msgid "微信公众号：驼铃电商技术团"
-msgstr ""
+msgstr "微信公众号：驼铃电商技术团"
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:210
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\app\app.py:467
@@ -259,6 +259,91 @@ msgstr ""
 #, python-brace-format
 msgid "{note}数据响应内容异常：{response}"
 msgstr ""
+
+msgid "退出"
+msgstr "退出"
+
+msgid "返回"
+msgstr "返回"
+
+#, python-brace-format
+msgid "版本号：{version}"
+msgstr "版本号：{version}"
+
+msgid "关闭"
+msgstr "关闭"
+
+msgid "Cookie"
+msgstr "Cookie"
+
+msgid "下载记录"
+msgstr "下载记录"
+
+msgid "启用下载记录"
+msgstr "启用下载记录"
+
+msgid "语言"
+msgstr "语言"
+
+msgid "保存配置"
+msgstr "保存配置"
+
+msgid "放弃更改"
+msgstr "放弃更改"
+
+msgid "设置"
+msgstr "设置"
+
+msgid "配置保存成功"
+msgstr "配置保存成功"
+
+msgid "已放弃当前更改"
+msgstr "已放弃当前更改"
+
+msgid "正在检查版本更新..."
+msgstr "正在检查版本更新..."
+
+msgid "更新"
+msgstr "更新"
+
+msgid "关于"
+msgstr "关于"
+
+msgid "请输入快手作品链接"
+msgstr "请输入快手作品链接"
+
+msgid "多个链接之间使用空格分隔"
+msgstr "多个链接之间使用空格分隔"
+
+msgid "下载作品文件"
+msgstr "下载作品文件"
+
+msgid "读取剪贴板"
+msgstr "读取剪贴板"
+
+msgid "清空输入框"
+msgstr "清空输入框"
+
+msgid "主页"
+msgstr "主页"
+
+msgid "欢迎使用 KS-Downloader"
+msgstr "欢迎使用 KS-Downloader"
+
+msgid "输入框已清空"
+msgstr "输入框已清空"
+
+msgid "剪贴板为空"
+msgstr "剪贴板为空"
+
+msgid "已读取剪贴板内容"
+msgstr "已读取剪贴板内容"
+
+msgid "正在处理中，请稍候..."
+msgstr "正在处理中，请稍候..."
+
+msgid "处理完成"
+msgstr "处理完成"
 
 #: C:\Users\You\PycharmProjects\KS-Downloader\source\request\template.py:173
 #, python-brace-format

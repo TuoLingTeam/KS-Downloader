@@ -58,6 +58,20 @@
 <li>运行 <code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</code> 命令安装程序所需模块</li>
 <li>运行 <code>main.py</code> 即可使用</li>
 </ol>
+<h3>🖥 TUI 模式说明</h3>
+<ul>
+<li>默认启动 TUI：<code>python main.py</code></li>
+<li>启动 API 服务：<code>python main.py api</code></li>
+<li>核心依赖：<code>textual</code>、<code>pyperclip</code></li>
+</ul>
+<h3>⌨️ TUI 快捷键</h3>
+<ul>
+<li><code>Q</code>：退出程序</li>
+<li><code>S</code>：打开设置</li>
+<li><code>U</code>：检查更新</li>
+<li><code>A</code>：打开关于页面</li>
+<li><code>B</code>：在子页面返回主页</li>
+</ul>
 <h2>⌨️ Docker 运行</h2>
 <ol>
 <li>获取镜像</li>

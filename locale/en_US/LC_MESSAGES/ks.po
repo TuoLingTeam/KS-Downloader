@@ -500,3 +500,88 @@ msgstr ""
 "\n"
 "- **text**: Text containing the work link; required parameter\n"
 "- **proxy**: The proxy used when making requests; optional parameter\n"
+
+msgid "退出"
+msgstr "Quit"
+
+msgid "返回"
+msgstr "Back"
+
+#, python-brace-format
+msgid "版本号：{version}"
+msgstr "Version: {version}"
+
+msgid "关闭"
+msgstr "Close"
+
+msgid "Cookie"
+msgstr "Cookie"
+
+msgid "下载记录"
+msgstr "Download record"
+
+msgid "启用下载记录"
+msgstr "Enable download record"
+
+msgid "语言"
+msgstr "Language"
+
+msgid "保存配置"
+msgstr "Save settings"
+
+msgid "放弃更改"
+msgstr "Discard changes"
+
+msgid "设置"
+msgstr "Settings"
+
+msgid "配置保存成功"
+msgstr "Settings saved"
+
+msgid "已放弃当前更改"
+msgstr "Changes discarded"
+
+msgid "正在检查版本更新..."
+msgstr "Checking updates..."
+
+msgid "更新"
+msgstr "Update"
+
+msgid "关于"
+msgstr "About"
+
+msgid "请输入快手作品链接"
+msgstr "Please enter KuaiShou links"
+
+msgid "多个链接之间使用空格分隔"
+msgstr "Use spaces to separate multiple links"
+
+msgid "下载作品文件"
+msgstr "Download works"
+
+msgid "读取剪贴板"
+msgstr "Read clipboard"
+
+msgid "清空输入框"
+msgstr "Clear input"
+
+msgid "主页"
+msgstr "Home"
+
+msgid "欢迎使用 KS-Downloader"
+msgstr "Welcome to KS-Downloader"
+
+msgid "输入框已清空"
+msgstr "Input has been cleared"
+
+msgid "剪贴板为空"
+msgstr "Clipboard is empty"
+
+msgid "已读取剪贴板内容"
+msgstr "Clipboard content loaded"
+
+msgid "正在处理中，请稍候..."
+msgstr "Processing, please wait..."
+
+msgid "处理完成"
+msgstr "Completed"

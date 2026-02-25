@@ -65,6 +65,9 @@ class KS:
         self.console = ColorConsole(
             self.VERSION_BETA,
         )
+        self.print = None
+        self.__console_print = self.console.print
+        self.console.print = self.__redirect_print
         self.config_obj = Config(self.console)
         self.params = Parameter(
             console=self.console,
@@ -89,6 +92,27 @@ class KS:
         )
         self.running = True
         self.__function = None
+
+    def __redirect_print(
+        self,
+        *objects,
+        style=None,
+        highlight=False,
+        **kwargs,
+    ):
+        if callable(self.print):
+            return self.print(
+                *objects,
+                style=style,
+                highlight=highlight,
+                **kwargs,
+            )
+        return self.__console_print(
+            *objects,
+            style=style,
+            highlight=highlight,
+            **kwargs,
+        )
 
     async def run(self):
         self.config = await self.database.read_config()

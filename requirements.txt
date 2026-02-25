@@ -12,11 +12,15 @@ httpx[socks]==0.28.1
     # via ks-downloader (pyproject.toml)
 lxml==6.0.0
     # via ks-downloader (pyproject.toml)
+pyperclip==1.9.0
+    # via ks-downloader (pyproject.toml)
 pyyaml==6.0.2
     # via ks-downloader (pyproject.toml)
 rich==14.1.0
     # via ks-downloader (pyproject.toml)
 rookiepy==0.5.6
+    # via ks-downloader (pyproject.toml)
+textual==0.79.1
     # via ks-downloader (pyproject.toml)
 uvicorn[standard]==0.35.0
     # via ks-downloader (pyproject.toml)
