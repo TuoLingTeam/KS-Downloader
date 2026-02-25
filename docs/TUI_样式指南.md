@@ -378,3 +378,121 @@ App {
 - 🚀 易于维护和扩展
 
 遵循这些指南可以确保 TUI 界面保持专业、一致和用户友好。
+
+
+---
+
+## Textual CSS 限制说明
+
+### 不支持的 CSS 属性
+
+以下标准 CSS 属性在 Textual 中不支持，使用会导致解析错误：
+
+```css
+/* ❌ 不支持 - 会导致错误 */
+line-height: 1.5;                              /* 行高 */
+box-shadow: 0 0 8 2 rgba(0, 0, 0, 0.5);       /* 阴影效果 */
+font-family: "Arial";                          /* 字体族 */
+font-size: 16px;                               /* 字体大小 */
+transform: scale(1.1);                         /* CSS 变换 */
+transition: all 0.3s;                          /* CSS 过渡 */
+animation: fadeIn 1s;                          /* CSS 动画 */
+opacity: 0.5;                                  /* 不透明度（使用颜色透明度代替） */
+```
+
+### 替代方案
+
+| 需求 | 标准 CSS | Textual 替代方案 |
+|------|----------|------------------|
+| 行高 | `line-height: 1.5` | Textual 自动处理，无需设置 |
+| 阴影 | `box-shadow: ...` | 使用边框 + 背景色创建层次感 |
+| 透明度 | `opacity: 0.5` | 使用颜色透明度 `$primary 50%` |
+| 字体 | `font-family: ...` | 使用终端默认字体 |
+| 动画 | `animation: ...` | 使用 Textual 内置动画系统 |
+| 过渡 | `transition: ...` | Textual 自动处理状态过渡 |
+
+### Textual 支持的样式特性
+
+```css
+/* ✅ 支持的核心特性 */
+
+/* 颜色和背景 */
+color: $primary;
+background: $surface;
+background: $primary 20%;  /* 带透明度 */
+
+/* 边框 */
+border: tall $primary;
+border: round $accent;
+border: double $warning;
+border-left: thick $primary;
+
+/* 间距 */
+margin: 1 2;
+padding: 1;
+
+/* 尺寸 */
+width: 1fr;
+width: 50;
+width: 90vw;
+height: auto;
+height: 80vh;
+max-height: 40%;
+
+/* 布局 */
+layout: horizontal;
+layout: vertical;
+layout: grid;
+grid-size: 2 3;
+grid-rows: auto 1fr auto;
+grid-gutter: 1;
+
+/* 对齐 */
+align: center middle;
+content-align-horizontal: center;
+content-align-vertical: middle;
+text-align: center;
+
+/* 文本样式 */
+text-style: bold;
+text-style: italic;
+text-style: underline;
+text-style: bold underline;
+
+/* 滚动 */
+scrollbar-gutter: stable;
+```
+
+### 调试技巧
+
+如果遇到 CSS 解析错误：
+
+1. **检查错误信息**：Textual 会明确指出哪一行有问题
+2. **查阅文档**：访问 [Textual CSS 文档](https://textual.textualize.io/guide/CSS/)
+3. **使用开发工具**：`textual console` 可以实时查看样式应用情况
+4. **逐步添加**：一次添加一个样式规则，便于定位问题
+
+### 常见错误
+
+```css
+/* ❌ 错误：使用了不支持的属性 */
+.my-class {
+    line-height: 1.5;
+    box-shadow: 0 0 10px black;
+}
+
+/* ✅ 正确：使用 Textual 支持的属性 */
+.my-class {
+    padding: 1;
+    border: round $primary;
+    background: $panel;
+}
+```
+
+### 版本兼容性
+
+本样式指南基于 Textual 0.x 版本。不同版本可能支持不同的 CSS 特性，请参考官方文档获取最新信息。
+
+---
+
+**记住：** Textual CSS 是为终端界面设计的，不是标准的 Web CSS。虽然语法相似，但支持的属性集合是专门为 TUI 优化的。

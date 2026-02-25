@@ -130,6 +130,18 @@
 - ✅ 模态窗口正常弹出和关闭
 - ✅ 多语言支持完整
 
+## 已知限制
+
+### Textual CSS 限制
+由于 Textual 的 CSS 实现与标准 Web CSS 不同，以下属性不被支持：
+- ❌ `line-height` - 行高由 Textual 自动处理
+- ❌ `box-shadow` - 使用边框和背景色替代
+- ❌ `font-family` - 使用终端默认字体
+- ❌ `transform` - 不支持 CSS 变换
+- ❌ `transition` - Textual 自动处理状态过渡
+
+这些限制不影响 TUI 的功能和美观度，所有设计都已针对 Textual 的特性进行了优化。
+
 ## 测试建议
 
 ### 功能测试
